@@ -1,0 +1,24 @@
+CREATE DATABASE ProductDB;
+GO
+
+USE ProductDB;
+GO
+
+INSERT INTO PRODUCTS(PRODUCTNAME, PRICE, STOCK)
+VALUES
+('Laptop', 999.99, 10),
+('Phone', 499.99, 5),
+('Tablet', 599.99, 8);
+GO
+
+SELECT * FROM Products;
+GO
+
+UPDATE PRODUCTS
+SET
+    PRODUCTNAME = 'Macbook Pro M4',
+    PRICE = 1299.99,
+    STOCK = 18
+WHERE 
+    PRODUCTID = 8;
+
