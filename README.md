@@ -35,21 +35,21 @@ A full-stack CRUD application for managing products using Flutter, Provider, Exp
 ## Screenshots
 
 ### Product List Page
-<img src="screenshots/product_list.jpg" alt="Product List" width="400" />
+<img src="screenshots/product_list.jpg" alt="Product List" width="200" />
 
 ### Add Product Page
-<img src="screenshots/add_product.jpg" alt="Add Product" width="400" />
+<img src="screenshots/add_product.jpg" alt="Add Product" width="200" />
 
 ### Edit Product Page
-<img src="screenshots/edit_product.jpg" alt="Edit Product" width="400" />
+<img src="screenshots/edit_product.jpg" alt="Edit Product" width="200" />
 
 ### Pull Down Refresh
-<img src="screenshots/pull_down_refresh.jpg" alt="Pull Refresh" width="400" />
+<img src="screenshots/pull_down_refresh.jpg" alt="Pull Refresh" width="200" />
 
 ### Delete Confirmation
-<img src="screenshots/confirmation_delete.jpg" alt="Delete Confirmation" width="400" />
+<img src="screenshots/confirmation_delete.jpg" alt="Delete Confirmation" width="200" />
 
 ### Search Product
-<img src="screenshots/search_product.jpg" alt="Search Product" width="400" />
+<img src="screenshots/search_product.jpg" alt="Search Product" width="200" />
 
    
