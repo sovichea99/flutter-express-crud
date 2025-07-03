@@ -1,13 +1,13 @@
 const {poolPromise, sql} = require('../db');
 
 //GET all products
-exports.getAllProducts = async (res) => {
+exports.getAllProducts = async (req, res) => {
     try {
         const pool = await poolPromise;
         const result = await pool.request().query("SELECT * FROM PRODUCTS");
         res.status(200).json(result.recordset);
-    }catch(err){
-        console.err("Error fetching products: ", err);
+    }catch(error){
+        console.error("Error fetching products: ", error);
         res.status(500).json({error: "Failed to fetch products!"})
     }
 }
