@@ -9,16 +9,17 @@ class ProductProvider with ChangeNotifier {
   bool _isLoading = false;
   String? _errorMessage;
 
-  //Getters to access private variables
+  // Getters to access the private state variables
   List<Product> get products => _products;
   bool get isLoading => _isLoading;
   String? get errorMessage => _errorMessage;
 
-  //Method that handle loading and error states for API calls
+  // --- THE PROVIDER PATTERN ---
+  // A generic method to handle loading and error states for API calls
   Future<void> _handleApiCall(Future<void> apiCall) async {
     _isLoading = true;
     _errorMessage = null;
-    notifyListeners(); //Notify UI that is loading
+    notifyListeners(); // Notify UI that is loading
 
     try {
       await apiCall;
@@ -26,11 +27,10 @@ class ProductProvider with ChangeNotifier {
       _errorMessage = error.toString();
     } finally {
       _isLoading = false;
-      notifyListeners(); //Notify UI that loading is done
+      notifyListeners(); // Notify UI that loading is finished
     }
   }
 
-  //Fetch products from API
   Future<void> fetchProducts() async {
     _isLoading = true;
     _errorMessage = null;
@@ -46,11 +46,26 @@ class ProductProvider with ChangeNotifier {
     }
   }
 
-  //Add a new product
   Future<void> addProduct(Product product) async {
     await _handleApiCall(_apiService.addProduct(product));
-    if (_errorMessage == null){
-      fetchProducts(); // Refresh the product list after adding
+    if (_errorMessage == null) {
+      fetchProducts(); // Refresh the list after adding
+    }
+  }
+
+  Future<void> updateProduct(int id, Product product) async {
+    await _handleApiCall(_apiService.updateProduct(id, product));
+    if (_errorMessage == null) {
+      fetchProducts(); // Refresh the list after updating
+      notifyListeners();
+    }
+  }
+
+  Future<void> deleteProduct(int id) async {
+    await _handleApiCall(_apiService.deleteProduct(id));
+    if (_errorMessage == null) {
+      _products.removeWhere((product) => product.id == id);
+      notifyListeners(); // Optimistic update
     }
   }
 }
