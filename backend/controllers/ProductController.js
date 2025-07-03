@@ -57,6 +57,10 @@ exports.updateProduct = async (req, res) => {
         const { id } = req.params;
         const { productName, price, stock } = req.body;
 
+         if (!productName || price <= 0 || stock <= 0) {
+            return res.status(400).json({ error: 'Invalid input! Product name cannot be empty, and price/stock must be positive.' });
+        }
+
         const pool = await poolPromise;
         await pool
         .request()
@@ -71,7 +75,7 @@ exports.updateProduct = async (req, res) => {
     }
 }
 
-//DELETE remoqve a product
+//DELETE remove a product
 exports.deleteProduct = async (req, res) => {
     try {
         const { id } = req.params;
@@ -81,7 +85,7 @@ exports.deleteProduct = async (req, res) => {
         .input("id", sql.Int, id)
         .query("DELETE FROM PRODUCTS WHERE PRODUCTID = @id");
 
-        res.status(200).json({message: 'Product deleted successfully!'});
+        res.status(204).json({message: 'Product deleted successfully!'});
     } catch (err) {
         res.status(500).json({error: "Failed to delete product!"});
     }

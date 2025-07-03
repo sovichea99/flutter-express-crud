@@ -27,11 +27,19 @@ class _ProductFormScreenState extends State<ProductFormScreen> {
   @override
   void initState() {
     super.initState();
-    // If we are editing, pre-fill the form fields
     if (widget.product != null) {
-      _nameController.text = widget.product!.name;
-      _priceController.text = widget.product!.price.toString();
-      _stockController.text = widget.product!.stock.toString();
+      // Fetch fresh data from API instead of using passed product
+      Provider.of<ProductProvider>(context, listen: false)
+          .getProductById(widget.product!.id)
+          .then((freshProduct) {
+        if (mounted) {
+          setState(() {
+            _nameController.text = freshProduct!.name;
+            _priceController.text = freshProduct.price.toString();
+            _stockController.text = freshProduct.stock.toString();
+          });
+        }
+      });
     }
   }
 

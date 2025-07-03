@@ -46,6 +46,22 @@ class ProductProvider with ChangeNotifier {
     }
   }
 
+  Future<Product?> getProductById(int id) async {
+    _isLoading = true;
+    _errorMessage = null;
+    notifyListeners();
+
+    try {
+      final product = await _apiService.getProductById(id);
+      return product;
+    } catch (error) {
+      _errorMessage = error.toString();
+      return null;
+    } finally {
+      _isLoading = false;
+      notifyListeners();
+    }
+  }
   Future<void> addProduct(Product product) async {
     await _handleApiCall(_apiService.addProduct(product));
     if (_errorMessage == null) {
