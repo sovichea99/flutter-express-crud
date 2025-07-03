@@ -18,7 +18,6 @@ class Product {
     );
   }
   //CONVERT A PRODUCT INSTANCE TO A MAP (JSON)
-  // The backend uses 'productName', so I match that.
   Map<String, dynamic> toJson() {
     return {
       'productName': name,

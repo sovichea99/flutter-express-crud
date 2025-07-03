@@ -80,22 +80,22 @@ class _ProductFormScreenState extends State<ProductFormScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300], // Match ProductListScreen background
+      backgroundColor: Colors.grey[300],
       appBar: AppBar(
         title: Text(
           widget.product == null ? 'Add Product' : 'Edit Product',
           style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
         ),
-        backgroundColor: Colors.blueAccent, // Match ProductListScreen app bar
+        backgroundColor: Colors.blueAccent,
         elevation: 0,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0),
         child: Card(
-          color: Colors.white, // Match ProductListScreen card color
+          color: Colors.white,
           elevation: 0,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12), // Match ProductListScreen card radius
+            borderRadius: BorderRadius.circular(12),
           ),
           child: Padding(
             padding: const EdgeInsets.all(16.0),

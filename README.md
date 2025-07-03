@@ -9,7 +9,7 @@ A full-stack CRUD application for managing products using Flutter, Provider, Exp
 1. Navigate to the `/backend` folder: `cd backend`
 2. Install dependencies: `npm install`
 3. Create a `.env` file by copying `.env.example` and fill in your SQL Server credentials.
-4. Start the server: `npm start`
+4. Start the server: `node index.js`
     - The API will run on `http://localhost:3000`
 
 ### Frontend
@@ -21,5 +21,34 @@ A full-stack CRUD application for managing products using Flutter, Provider, Exp
 ## API Base URL
 - `http://localhost:3000/products`
 
-## Screenshots (Optional)
-- [Add images here if available]
+## Features Implemented
+- List all products
+- Add new product
+- Edit a product
+- Delete with confirmation
+- Pull-to-refresh
+- Field validation
+- RESTful API with JSON responses
+- .env configuration for database credentials
+- CORS enabled for Flutter to connect to backend
+
+## Screenshots 
+   ### Product List Page
+   ![Product List](screenshots/product_list.jpg)
+
+   ### Add Product Page
+   ![Add Product](screenshots/add_product.jpg)
+
+   ### Edit Product Page
+   ![Edit Product](screenshots/edit_product.jpg)
+
+   ### Pull Down Refresh
+   ![Pull Refresh](screenshots/pull_down_refresh.jpg)
+
+   ### Delete Confirmation
+   ![Delete Confirmation](screenshots/confirmation_delete.jpg)
+
+   ### Search Product
+   ![Search Product](screenshots/search_product.jpg)
+
+   
