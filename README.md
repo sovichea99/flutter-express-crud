@@ -32,23 +32,24 @@ A full-stack CRUD application for managing products using Flutter, Provider, Exp
 - .env configuration for database credentials
 - CORS enabled for Flutter to connect to backend
 
-## Screenshots 
-   ### Product List Page
-   ![Product List](screenshots/product_list.jpg)
+## Screenshots
 
-   ### Add Product Page
-   ![Add Product](screenshots/add_product.jpg)
+### Product List Page
+<img src="screenshots/product_list.jpg" alt="Product List" width="400" />
 
-   ### Edit Product Page
-   ![Edit Product](screenshots/edit_product.jpg)
+### Add Product Page
+<img src="screenshots/add_product.jpg" alt="Add Product" width="400" />
 
-   ### Pull Down Refresh
-   ![Pull Refresh](screenshots/pull_down_refresh.jpg)
+### Edit Product Page
+<img src="screenshots/edit_product.jpg" alt="Edit Product" width="400" />
 
-   ### Delete Confirmation
-   ![Delete Confirmation](screenshots/confirmation_delete.jpg)
+### Pull Down Refresh
+<img src="screenshots/pull_down_refresh.jpg" alt="Pull Refresh" width="400" />
 
-   ### Search Product
-   ![Search Product](screenshots/search_product.jpg)
+### Delete Confirmation
+<img src="screenshots/confirmation_delete.jpg" alt="Delete Confirmation" width="400" />
+
+### Search Product
+<img src="screenshots/search_product.jpg" alt="Search Product" width="400" />
 
    
